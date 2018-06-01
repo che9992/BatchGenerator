@@ -1,6 +1,10 @@
+__author__ = "cheayoung jung <che9992@gmail.com>"
+__version__ = "2018-06-01"
 
 class BatchGenerator():
     where = 0
+
+    
     def __init__(self, x, y, batch_size, one_hot = False, nb_classes = 0):
         self.nb_classes = nb_classes
         self.one_hot = one_hot
@@ -11,7 +15,7 @@ class BatchGenerator():
         self.total_batch = int(len(x) / batch_size)
         self.x = self.x_[:batch_size,:]
         self.y = self.y_[:batch_size,:]
-        self.where = 100
+        self.where = batch_size
         
         if self.one_hot :
             self.set_one_hot()
