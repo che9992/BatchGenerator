@@ -1,3 +1,5 @@
+import numpy as np
+
 __author__ = "cheayoung jung <che9992@gmail.com>"
 __version__ = "2018-06-01"
 
