@@ -27,7 +27,8 @@ for step in range(100):
     av_cost = 0
     for i in range(datas.total_batch):
         co_v, _ = sess.run([cost, train], feed_dict = {X: datas.x, Y: datas.y})
-        datas.next_batch()
+       
+        datas.next_batch() # get next datas, to datas.x, datas.y
         av_cost += co_v / datas.total_batch
 
 
