@@ -1,0 +1,35 @@
+# Batch Generator for Deep learning 
+<hr/>
+
+you only need numpy,
+
+you can use, one_hot for softmax 
+
+it simple and working great for softmax, linear regression with TF
+
+## example usage
+```python
+import numpy as np
+import pandas as pd
+train_data = pd.read_csv('fashion-mnist_train.csv', dtype='float32')
+train_data = np.array(train_data)
+train_Y = train_data[:,[0]]
+train_X = train_data[:,1:]
+
+...
+# if one_hot = True , it makes data_y to one_hot encoding 
+
+datas = BatchGenerator(train_X, train_Y, batch_size=100, one_hot=True, nb_classes=nb_classes)
+
+...
+
+for step in range(100):
+    av_cost = 0
+    for i in range(datas.total_batch):
+        co_v, _ = sess.run([cost, train], feed_dict = {X: datas.x, Y: datas.y})
+       
+        datas.next_batch() # get next datas, to datas.x, datas.y
+        av_cost += co_v / datas.total_batch
+
+
+```

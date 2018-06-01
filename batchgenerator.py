@@ -3,8 +3,20 @@ __version__ = "2018-06-01"
 
 class BatchGenerator():
     where = 0
+<<<<<<< HEAD
 
     
+=======
+    '''
+    usage
+    
+    var = BatchGenerator(xdata, ydata, batch_size = 100)
+    var.x 
+    var.y
+    var.next()
+    
+    '''
+>>>>>>> 141a04f7dc591678fb141daf79bed605729fb40f
     def __init__(self, x, y, batch_size, one_hot = False, nb_classes = 0):
         self.nb_classes = nb_classes
         self.one_hot = one_hot
