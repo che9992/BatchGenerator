@@ -9,7 +9,9 @@ it simple and working great for softmax, linear regression with TF
 
 ## notice 
 20180623 you don't need making datax to full connect before input Batch class anymore
+
 for example, if your datas shape are [8540, 64, 64, 3]
+
 you can just input !  no need to make FC
 
 ## example usage
