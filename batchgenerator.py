@@ -35,8 +35,8 @@ class BatchGenerator():
         if self.where + self.batch_size > len(self.x_) :
             self.where = 0
             
-        self.x = self.x_[self.where:self.where+self.batch_size,:]
-        self.y = self.y_[self.where:self.where+self.batch_size,:]
+        self.x = self.x_[self.where:self.where+self.batch_size,]
+        self.y = self.y_[self.where:self.where+self.batch_size,]
         self.where += self.batch_size
         
         if self.one_hot:
