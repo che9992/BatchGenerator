@@ -1,11 +1,12 @@
 
 __author__ = "cheayoung jung <che9992@gmail.com>"
-__version__ = "2018-06-23"
+__version__ = "2018-06-26"
 
-class BatchGenerator():
-    where = 0
 
     
+class BatchGenerator():
+    where = 0
+        
     '''
     usage
     
@@ -33,7 +34,8 @@ class BatchGenerator():
 
     def next_batch(self):
         if self.where + self.batch_size > len(self.x_) :
-            self.where = 0
+            self.where = len(self.x_) - self.where
+            print(self.where)
             
         self.x = self.x_[self.where:self.where+self.batch_size,]
         self.y = self.y_[self.where:self.where+self.batch_size,]
