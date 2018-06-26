@@ -14,6 +14,19 @@ for example, if your datas shape are [8540, 64, 64, 3]
 
 you can just input !  no need to make FC
 
+## How to Test it
+```python
+tx = np.arange(0,8005)
+ty = np.arange(0,8005)
+batch = BatchGenerator(tx, ty, batch_size=30, one_hot=True, nb_classes=8005)
+for i in range(1000):
+    print(batch.x)
+    print(np.argmax(batch.y,1))
+    print('\n')
+    batch.next_batch()
+```
+
+
 ## example usage
 ```python
 import numpy as np
