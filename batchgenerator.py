@@ -52,5 +52,5 @@ class BatchGenerator():
                 self.set_one_hot()
         
     def set_one_hot(self):
-        one_hot = np.array(self.y).reshape(-1)
+        one_hot = np.array(self.y).reshape(-1).astype(np.int)
         self.y = np.eye(self.nb_classes)[one_hot]
